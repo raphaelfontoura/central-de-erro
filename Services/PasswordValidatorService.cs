@@ -19,7 +19,7 @@ namespace ErrorCentralApi.Services
         {   
             var user = _dbContext
                 .Users.FirstOrDefault(u => u.Email == context.UserName);
-            if (user != null && user.Password == context.Password.Sha256())
+            if (user != null && user.Password == context.Password)
             {
                 context.Result = new GrantValidationResult(
                     subject: user.Id.ToString(),

@@ -27,7 +27,7 @@ namespace ErrorCentralApi.Services
         
         public User Save(User user)
         {
-            user.Password = user.Password.Sha256();
+            //user.Password = user.Password.Sha256();
             if (user.Id == null)
             {
                 _context.Users.Add(user);
